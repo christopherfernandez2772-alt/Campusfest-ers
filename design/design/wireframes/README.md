@@ -4,4 +4,5 @@
 <img width="1024" height="1536" alt="ver stands" src="https://github.com/user-attachments/assets/db170b0e-928e-4256-9bc9-3c5cef1faa69" /> WF-04-Stands.png
 <img width="1024" height="1536" alt="agenda" src="https://github.com/user-attachments/assets/a0fd5ef7-125f-4f3f-8764-d2274672041d" /> WF-05-Agenda.png
 <img width="1536" height="1024" alt="panel administrativo" src="https://github.com/user-attachments/assets/002f71e1-fb59-4a1e-a858-4121a64a6922" /> WF-06-Panel-Administrativo.png
-
+<img width="1536" height="1024" alt="Gestion de actividades" src="https://github.com/user-attachments/assets/a8387e48-dbc1-4f9c-a5d4-67a3880245d2" /> WF‑07 – Gestión de Actividades (Administrador)
+<img width="1536" height="1024" alt="Gestion de inscripciones" src="https://github.com/user-attachments/assets/37b6dd9f-fbd0-4640-b6cc-7a44227a9a9a" /> WF‑08‑Gestion‑Inscripciones (Administrador)
