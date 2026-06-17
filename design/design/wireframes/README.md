@@ -6,3 +6,4 @@
 <img width="1536" height="1024" alt="panel administrativo" src="https://github.com/user-attachments/assets/002f71e1-fb59-4a1e-a858-4121a64a6922" /> WF-06-Panel-Administrativo.png
 <img width="1536" height="1024" alt="Gestion de actividades" src="https://github.com/user-attachments/assets/a8387e48-dbc1-4f9c-a5d4-67a3880245d2" /> WF‑07 – Gestión de Actividades (Administrador)
 <img width="1536" height="1024" alt="Gestion de inscripciones" src="https://github.com/user-attachments/assets/37b6dd9f-fbd0-4640-b6cc-7a44227a9a9a" /> WF‑08‑Gestion‑Inscripciones (Administrador)
+<img width="1536" height="1024" alt="Gestion de FAQs " src="https://github.com/user-attachments/assets/84a70ae0-26b6-41d7-92a5-a0f1b691df2f" /> WF‑09‑Gestion FAQs (Administrador)
