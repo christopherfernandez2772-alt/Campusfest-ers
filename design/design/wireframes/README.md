@@ -3,4 +3,5 @@
 <img width="1024" height="1536" alt="formulario de lista de espera" src="https://github.com/user-attachments/assets/e03b2ab6-2a31-43f4-8199-e30a09effd78" /> WF-03-Formulario-Inscripcion.png
 <img width="1024" height="1536" alt="ver stands" src="https://github.com/user-attachments/assets/db170b0e-928e-4256-9bc9-3c5cef1faa69" /> WF-04-Stands.png
 <img width="1024" height="1536" alt="agenda" src="https://github.com/user-attachments/assets/a0fd5ef7-125f-4f3f-8764-d2274672041d" /> WF-05-Agenda.png
-<img width="1024" height="1536" alt="panel administrativo" src="https://github.com/user-attachments/assets/[tu-nueva-imagen-id]" /> WF-06-Panel-Administrativo.png
+<img width="1536" height="1024" alt="panel administrativo" src="https://github.com/user-attachments/assets/002f71e1-fb59-4a1e-a858-4121a64a6922" /> WF-06-Panel-Administrativo.png
+
