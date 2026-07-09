@@ -18,5 +18,8 @@ Describe la estructura de pantallas y la navegación principal del sistema.
 Wireframes
 - Carpeta: `wireframes/`  
 
+Matriz de Trazabilidad
+- Archivo: `matriz-trazabilidad.md`
+Relaciona cada requisito del sistema con su wireframe, historia en Jira y épica correspondiente.
 
 
