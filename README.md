@@ -52,8 +52,8 @@ Repositorio con todos los artefactos del proyecto:
 
 ## Estado de la entregas
 Todos los elementos solicitadas están incluidos:
-- Documento de análisis y diseño ✔  
-- Matriz de trazabilidad actualizada ✔  
-- ERS ✔  
-- Evidencias ✔  
-- Artefactos de diseño ✔  
+- Documento de análisis y diseño 
+- Matriz de trazabilidad actualizada 
+- ERS 
+- Evidencias 
+- Artefactos de diseño 
