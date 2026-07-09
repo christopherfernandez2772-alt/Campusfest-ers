@@ -10,7 +10,7 @@ Integrantes:
 ## Documentos principales
 
 ### 1. Documento de Análisis y Diseño (Bitácora 2)
-Archivo: [design/Bitacora 2.pdf](design/Bitacora%202.pdf)  
+Archivo: [design/Bitacora 2.pdf](design/Bitacora 2 .pdf)  
 Incluye arquitectura, casos de uso, wireframes, guía de estilos, navegación, matriz de trazabilidad, actividades realizadas, inconvenientes y evidencias.
 
 ### 2. Especificación de Requisitos de Software (ERS)
