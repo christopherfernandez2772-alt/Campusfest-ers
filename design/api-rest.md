@@ -29,11 +29,8 @@ POST /api/auth/login
 ```json
 { "success": true, "data": ... } 
 
-## FORMATO DE RESPUESTA
-Error:
+Error
 ```json
 { "success": false, "message": "...", "details": { ... } }
-
-
 
 
