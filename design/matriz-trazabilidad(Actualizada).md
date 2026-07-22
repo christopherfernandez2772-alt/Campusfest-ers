@@ -1,6 +1,6 @@
 
 ┌────────────────────────────────────────────────┬──────────┬──────────────────┬──────────────────────────┬──────────────────────────────────────────────────────────┐
-│ Requisito                                      │ Wireframe│ Historia en Jira │ Épica                    │ Endpoint                                                 │
+│ ##Requisito                                      │ Wireframe│ Historia en Jira │ Épica                    │ Endpoint                                                 │
 ├────────────────────────────────────────────────┼──────────┼──────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────┤
 │ RF-FE-01 - Página de inicio                    │ WF-01    │ HU-01            │ Gestión de Actividades   │ GET /api/actividades                                     │
 │ RF-FE-02.1 - Catálogo visual                   │ WF-01    │ HU-02            │ Gestión de Actividades   │ GET /api/actividades                                     │
