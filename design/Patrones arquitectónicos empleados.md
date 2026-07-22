@@ -1,4 +1,4 @@
-# Arquitectura del sistema – CampusFest
+# Patrones arquitectónicos empleados – CampusFest
 
 ## 1. Arquitectura en capas
 
