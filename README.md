@@ -22,12 +22,12 @@ Todos los artefactos se encuentran en la carpeta `design/`:
 
 Todos los artefactos se encuentran en la carpeta `design/Arquitectura`:
 
--Diagrama casos de uso
--Diagrama de arquitectura de Campus Fest (En capas)
--Patrones arquitectónicos empleados – CampusFest
+- Diagrama casos de uso
+- Diagrama de arquitectura de Campus Fest (En capas)
+- Patrones arquitectónicos empleados – CampusFest
 
 Todos los artefactos se encuentran en la carpeta `design/base de datos`:
--Diseño de base de datos con colecciones 
+- Diseño de base de datos con colecciones 
 
 
 ---
