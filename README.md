@@ -8,7 +8,7 @@ Este repositorio contiene la documentación oficial del proyecto **CampusFest**,
 
 
 
-### Nueva actuializacion para el avance 3 
+### Nueva actualizacion para el avance 3 
 
 Incluimos - Tecnologías utilizadas, actividades realizadas, inconvenientes y evidencias.
 
