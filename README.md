@@ -6,17 +6,29 @@ Este repositorio contiene la documentación oficial del proyecto **CampusFest**,
 
 - **Christopher Fernandez Matarrita**
 
+---
+
 Todos los artefactos se encuentran en la carpeta `design/`:
 
 - Guía de estilos  
 - Wireframes  
 - Mapa de navegación  
-- Arquitectura del sistema
 - Diseño de la base de datos  
 - Estructura del sistema  
 - API REST  
 - Seguridad y manejo de errores  
 - Matriz de trazabilidad actualizada  
+
+
+Todos los artefactos se encuentran en la carpeta `design/Arquitectura`:
+
+-Diagrama casos de uso
+-Diagrama de arquitectura de Campus Fest (En capas)
+-Patrones arquitectónicos empleados – CampusFest
+
+Todos los artefactos se encuentran en la carpeta `design/base de datos`:
+-Diseño de base de datos con colecciones 
+
 
 ---
 
