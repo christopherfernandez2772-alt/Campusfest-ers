@@ -6,14 +6,6 @@ Este repositorio contiene la documentación oficial del proyecto **CampusFest**,
 
 - **Christopher Fernandez Matarrita**
 
-
-
-### Actualización para el avance 3 
-
-Incluimos - Tecnologías utilizadas, actividades realizadas, inconvenientes y evidencias.
-
-##  Artefactos de Diseño 
-
 Todos los artefactos se encuentran en la carpeta `design/`:
 
 - Guía de estilos  
