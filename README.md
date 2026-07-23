@@ -6,22 +6,11 @@ Este repositorio contiene la documentación oficial del proyecto **CampusFest**,
 
 - **Christopher Fernandez Matarrita**
 
----
-
-## Documentos principales
-
-### 1. Especificación de Requisitos de Software (ERS)
-**Archivo:** `ERS CampusFest.pdf`  
-Contiene propósito, alcance, requisitos funcionales, no funcionales, restricciones y trazabilidad inicial.
 
 
-### 2. Documento de Análisis y Diseño (Bitácora 2)
-**Archivo:** `design/Bitacora 2.pdf`  
-Incluye arquitectura inicial, casos de uso, wireframes, guía de estilos, navegación, actividades realizadas, inconvenientes y evidencias.
+### Nueva actuializacion para el avance 3 
 
-
-### 3. Bitácora 3 – Diseño Técnico
-Incluye - Tecnologías utilizadas, actividades realizadas, inconvenientes y evidencias.
+Incluimos - Tecnologías utilizadas, actividades realizadas, inconvenientes y evidencias.
 
 ##  Artefactos de Diseño 
 
