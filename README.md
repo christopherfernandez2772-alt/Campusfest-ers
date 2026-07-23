@@ -59,8 +59,7 @@ Todos los elementos solicitados en la Bitácora 3 están incluidos:
 - Seguridad y manejo de errores  
 - Tecnologías utilizadas  
 - Matriz de trazabilidad actualizada  
-- Evidencias en Jira  
-- Evidencias en GitHub  
+- Historias nuevas en Jira  
 ---
 
 ## Toda la documentación está basada exclusivamente en los artefactos oficiales del proyecto CampusFest.
