@@ -1,0 +1,237 @@
+:root {
+  --cf-blue: #2b5cff;
+  --cf-purple: #7b2ff7;
+  --cf-orange: #ff8a3d;
+  --cf-white: #ffffff;
+  --cf-dark-bg: #12131c;
+  --cf-dark-surface: #1b1d2b;
+  --cf-radius: 1rem;
+  --cf-shadow: 0 10px 30px rgba(43, 92, 255, 0.12);
+  --cf-gradient: linear-gradient(135deg, var(--cf-blue), var(--cf-purple));
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f6f7fb;
+  color: #1e1f2b;
+  scroll-behavior: smooth;
+}
+
+/* Skip link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cf-blue);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 2000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.card:focus-visible {
+  outline: 3px solid var(--cf-orange);
+  outline-offset: 2px;
+}
+
+/* Navbar */
+.cf-navbar {
+  background: var(--cf-gradient);
+  box-shadow: var(--cf-shadow);
+}
+.cf-navbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.cf-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.cf-navbar .nav-link:hover,
+.cf-navbar .nav-link.active {
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* Hero */
+.cf-hero {
+  background: var(--cf-gradient);
+  color: #fff;
+  border-radius: 0 0 2rem 2rem;
+  padding: 4rem 1rem;
+}
+.cf-hero h1 {
+  font-weight: 800;
+}
+.cf-hero .btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cf-hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Cards */
+.cf-card {
+  border: none;
+  border-radius: var(--cf-radius);
+  box-shadow: var(--cf-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+.cf-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(43, 92, 255, 0.2);
+}
+.cf-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+.cf-badge-cultural { background-color: var(--cf-purple); }
+.cf-badge-deportivo { background-color: #2ecc71; }
+.cf-badge-tecnologico { background-color: var(--cf-blue); }
+.cf-badge-artistico { background-color: #e84393; }
+.cf-badge-gastronomico { background-color: var(--cf-orange); }
+.cf-badge-recreativo { background-color: #00b894; }
+
+.cf-status-disponible { background-color: #2ecc71; }
+.cf-status-lleno { background-color: #e74c3c; }
+.cf-status-cancelado { background-color: #7f8c8d; }
+
+/* Section titles */
+.cf-section-title {
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.cf-section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--cf-gradient);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.cf-footer {
+  background: #171826;
+  color: #d5d7e5;
+  padding: 3rem 0 1.5rem;
+}
+.cf-footer a {
+  color: #d5d7e5;
+  text-decoration: none;
+}
+.cf-footer a:hover {
+  color: var(--cf-orange);
+  text-decoration: underline;
+}
+
+/* Loading spinner */
+.cf-spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+  gap: 1rem;
+}
+
+/* Empty state */
+.cf-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+.cf-empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--cf-purple);
+}
+
+/* Toast container */
+.cf-toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+}
+
+/* Buttons */
+.btn-cf-primary {
+  background: var(--cf-gradient);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-cf-primary:hover {
+  color: #fff;
+  filter: brightness(1.08);
+}
+.btn-cf-outline {
+  border: 2px solid var(--cf-blue);
+  color: var(--cf-blue);
+  font-weight: 600;
+  background: transparent;
+}
+.btn-cf-outline:hover {
+  background: var(--cf-blue);
+  color: #fff;
+}
+
+/* Mobile tweaks */
+@media (max-width: 767.98px) {
+  .cf-hero {
+    padding: 2.5rem 1rem;
+    border-radius: 0 0 1.25rem 1.25rem;
+  }
+  .btn-lg-mobile {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--cf-dark-bg);
+    color: #e7e8f0;
+  }
+  .cf-card {
+    background-color: var(--cf-dark-surface);
+    color: #e7e8f0;
+  }
+  .cf-footer {
+    background: #0c0d15;
+  }
+  .form-control,
+  .form-select {
+    background-color: var(--cf-dark-surface);
+    color: #e7e8f0;
+    border-color: #2c2e42;
+  }
+  .form-control:focus,
+  .form-select:focus {
+    background-color: var(--cf-dark-surface);
+    color: #e7e8f0;
+  }
+  .table {
+    color: #e7e8f0;
+  }
+  .modal-content {
+    background-color: var(--cf-dark-surface);
+    color: #e7e8f0;
+  }
+}
