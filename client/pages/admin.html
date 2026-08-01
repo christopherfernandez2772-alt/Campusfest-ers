@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - CampusFest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <div id="cf-navbar-placeholder"></div>
+
+  <main id="main-content" class="container py-5">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+      <h1 class="cf-section-title mb-0"><i class="bi bi-speedometer2 me-2" aria-hidden="true"></i>Panel de administración</h1>
+      <button class="btn btn-cf-outline" id="admin-logout-btn">
+        <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i>Cerrar sesión
+      </button>
+    </div>
+
+    <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab-activities-btn" data-bs-toggle="tab" data-bs-target="#tab-activities" type="button" role="tab" aria-controls="tab-activities" aria-selected="true">Actividades</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab-stands-btn" data-bs-toggle="tab" data-bs-target="#tab-stands" type="button" role="tab" aria-controls="tab-stands" aria-selected="false">Stands</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab-registrations-btn" data-bs-toggle="tab" data-bs-target="#tab-registrations" type="button" role="tab" aria-controls="tab-registrations" aria-selected="false">Inscripciones</button>
+      </li>
+    </ul>
+
+    <div class="tab-content bg-white p-3 p-md-4 rounded-bottom shadow-sm">
+      <!-- Actividades -->
+      <div class="tab-pane fade show active" id="tab-activities" role="tabpanel" aria-labelledby="tab-activities-btn">
+        <div class="d-flex justify-content-end mb-3">
+          <button class="btn btn-cf-primary" id="new-activity-btn">
+            <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Nueva actividad
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cupos</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-activities-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Stands -->
+      <div class="tab-pane fade" id="tab-stands" role="tabpanel" aria-labelledby="tab-stands-btn">
+        <div class="d-flex justify-content-end mb-3">
+          <button class="btn btn-cf-primary" id="new-stand-btn">
+            <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Nuevo stand
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Responsable</th>
+                <th scope="col">Ubicación</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-stands-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Inscripciones -->
+      <div class="tab-pane fade" id="tab-registrations" role="tabpanel" aria-labelledby="tab-registrations-btn">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Participante</th>
+                <th scope="col">Actividad</th>
+                <th scope="col">Fecha de inscripción</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-registrations-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="cf-footer-placeholder"></div>
+
+  <!-- Activity create/edit modal -->
+  <div class="modal fade" id="activityModal" tabindex="-1" aria-hidden="true" aria-labelledby="activityModalLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <form id="activity-form">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="activityModalLabel">Nueva actividad</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="activityId" name="activityId" />
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="activityName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="activityName" name="name" required />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="activityCategory" class="form-label">Categoría</label>
+                <select class="form-select" id="activityCategory" name="category" required>
+                  <option value="">Selecciona una categoría</option>
+                  <option value="Cultural">Cultural</option>
+                  <option value="Deportivo">Deportivo</option>
+                  <option value="Tecnológico">Tecnológico</option>
+                  <option value="Artístico">Artístico</option>
+                  <option value="Gastronómico">Gastronómico</option>
+                  <option value="Recreativo">Recreativo</option>
+                </select>
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-12">
+                <label for="activityDescription" class="form-label">Descripción</label>
+                <textarea class="form-control" id="activityDescription" name="description" rows="2" required></textarea>
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-4">
+                <label for="activityDate" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="activityDate" name="date" required />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-4">
+                <label for="activityTime" class="form-label">Hora</label>
+                <input type="time" class="form-control" id="activityTime" name="time" required />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-4">
+                <label for="activityLocation" class="form-label">Lugar</label>
+                <input type="text" class="form-control" id="activityLocation" name="location" required />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-4">
+                <label for="activityCapacity" class="form-label">Cupo máximo</label>
+                <input type="number" min="1" class="form-control" id="activityCapacity" name="capacity" required />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-4">
+                <label for="activityStatus" class="form-label">Estado</label>
+                <select class="form-select" id="activityStatus" name="status">
+                  <option value="Disponible">Disponible</option>
+                  <option value="Lleno">Lleno</option>
+                  <option value="Cancelado">Cancelado</option>
+                </select>
+              </div>
+              <div class="col-md-4 d-flex align-items-end">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="activityFeatured" name="featured" />
+                  <label class="form-check-label" for="activityFeatured">Actividad destacada</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="activityRequirements" class="form-label">Requisitos</label>
+                <input type="text" class="form-control" id="activityRequirements" name="requirements" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-cf-primary" id="activity-form-submit">Guardar actividad</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stand create modal -->
+  <div class="modal fade" id="standModal" tabindex="-1" aria-hidden="true" aria-labelledby="standModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="stand-form">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="standModalLabel">Nuevo stand</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="standName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="standName" name="name" required />
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="standCategory" class="form-label">Categoría</label>
+              <select class="form-select" id="standCategory" name="category" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Deportivo">Deportivo</option>
+                <option value="Tecnológico">Tecnológico</option>
+                <option value="Artístico">Artístico</option>
+                <option value="Gastronómico">Gastronómico</option>
+                <option value="Recreativo">Recreativo</option>
+              </select>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="standResponsible" class="form-label">Responsable</label>
+              <input type="text" class="form-control" id="standResponsible" name="responsible" required />
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="standLocation" class="form-label">Ubicación</label>
+              <input type="text" class="form-control" id="standLocation" name="location" required />
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="standDescription" class="form-label">Descripción</label>
+              <textarea class="form-control" id="standDescription" name="description" rows="2" required></textarea>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-cf-primary" id="stand-form-submit">Guardar stand</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/validation.js"></script>
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/components/toast.js"></script>
+  <script src="/components/spinner.js"></script>
+  <script src="/components/modal.js"></script>
+  <script src="/components/cards.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
