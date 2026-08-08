@@ -2,43 +2,74 @@
 # Estructura del sistema – CampusFest
 
 campusfest/
-├── src/
-│   ├── controllers/
-│   │   ├── actividades.controller.js
-│   │   ├── inscripciones.controller.js
-│   │   ├── stands.controller.js
-│   │   ├── faq.controller.js
-│   │   └── auth.controller.js
-│   ├── routes/
-│   │   ├── actividades.routes.js
-│   │   ├── inscripciones.routes.js
-│   │   ├── stands.routes.js
-│   │   ├── faq.routes.js
-│   │   └── auth.routes.js
-│   ├── models/
-│   │   ├── actividad.model.js
-│   │   ├── inscripcion.model.js
-│   │   ├── stand.model.js
-│   │   ├── faq.model.js
-│   │   └── administrador.model.js
-│   ├── middlewares/
-│   │   ├── auth.middleware.js
-│   │   ├── validation.middleware.js
-│   │   └── error.middleware.js
-│   ├── config/
-│   │   ├── db.js
-│   │   └── env.js
-│   ├── utils/
-│   │   ├── logger.js
-│   │   └── response.js
-│   └── app.js
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── img/
-├── views/
-│   ├── visitante/
-│   └── admin/
-├── tests/
+├── .env
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── README.md
 ├── package.json
-└── README.md
+├── package-lock.json
+├── node_modules/
+│
+├── server/
+│
+├── client/
+│
+└── design/
+
+server/
+├── models/
+│   ├── Activity.js
+│   ├── Participant.js
+│   ├── Registration.js
+│   └── Stand.js
+│
+├── controllers/
+│   ├── activityController.js
+│   ├── adminController.js
+│   ├── participantController.js
+│   ├── registrationController.js
+│   └── standController.js
+│
+├── routes/
+│   ├── activityRoutes.js
+│   ├── adminRoutes.js
+│   ├── participantRoutes.js
+│   ├── registrationRoutes.js
+│   └── standRoutes.js
+│
+├── middleware/
+│   ├── adminAuth.js
+│   ├── errorHandler.js
+│   └── sanitize.js
+│
+└── services/
+    └── registrationService.js
+
+client/
+├── index.html
+│
+├── pages/
+│   ├── activities.html
+│   ├── activity-detail.html
+│   ├── registration.html
+│   └── admin.html
+│
+├── js/
+│   ├── api.js
+│   ├── activities.js
+│   ├── activity-detail.js
+│   ├── registration.js
+│   ├── admin.js
+│   └── home.js
+│
+├── components/
+│   ├── navbar.js
+│   ├── footer.js
+│   ├── cards.js
+│   ├── modal.js
+│   ├── toast.js
+│   └── spinner.js
+│
+└── css/
+    └── styles.css
