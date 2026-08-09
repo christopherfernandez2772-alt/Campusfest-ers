@@ -1,6 +1,6 @@
 # Patrones arquitectónicos empleados — CampusFest
 
-# Resumen
+ Resumen
 # Lista y breve explicación de los patrones arquitectónicos, dónde se aplican en el proyecto y por qué se eligieron.
 
 1) MVC (Model-View-Controller)
