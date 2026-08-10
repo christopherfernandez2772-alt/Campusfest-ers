@@ -56,3 +56,39 @@ Todos los elementos solicitados en la Bitácora 3 están incluidos:
 ---
 
 ## Toda la documentación está basada exclusivamente en los artefactos oficiales del proyecto CampusFest.
+
+---
+
+# API (resumen de endpoints)
+
+Actividades
+GET  /api/actividades
+GET  /api/actividades/:id
+POST /api/actividades
+PUT  /api/actividades/:id
+DELETE /api/actividades/:id
+
+Inscripciones
+POST /api/inscripciones            # Crear inscripción (público)
+POST /api/inscripciones/lista-espera  # Añadir a lista de espera
+GET  /api/inscripciones/actividad/:idActividad  # Obtener inscripciones por actividad (público)
+DELETE /api/inscripciones/:id     # (admin)
+
+Stands
+GET  /api/stands
+POST /api/stands
+
+FAQ
+GET  /api/faq
+POST /api/faq
+PUT  /api/faq/:id
+
+Autenticación
+POST /api/auth/login
+
+
+> Responses estándar:
+> - Éxito: { "success": true, "data": ... }
+> - Error:  { "success": false, "message": "..." }
+
+

@@ -1,28 +1,47 @@
 :root {
-  --cf-blue: #2b5cff;
-  --cf-purple: #7b2ff7;
-  --cf-orange: #ff8a3d;
-  --cf-white: #ffffff;
-  --cf-dark-bg: #12131c;
-  --cf-dark-surface: #1b1d2b;
-  --cf-radius: 1rem;
-  --cf-shadow: 0 10px 30px rgba(43, 92, 255, 0.12);
-  --cf-gradient: linear-gradient(135deg, var(--cf-blue), var(--cf-purple));
+  /* Colores institucionales */
+  --cf-azul-institucional: #164A98;
+  --cf-azul-brillante: #006AEA;
+  --cf-azul-claro: #9CC8FF;
+  --cf-gris-claro: #D2D2D2;
+  --cf-gris-oscuro: #7C7B75;
+
+  /* Colores secundarios */
+  --cf-amarillo: #FFF200;
+  --cf-amarillo-oscuro: #FFC63E;
+
+  /* Tipografías oficiales */
+  --cf-font-title: 'Din Alternate Bold', sans-serif;
+  --cf-font-body: 'Circular Std', sans-serif;
+
+  /* Componentes UI */
+  --cf-radius-btn: 8px;
+  --cf-radius-card: 12px;
+
+  /* Hover botón primario */
+  --cf-btn-hover: #0F356C;
+
+  /* Espaciado base */
+  --cf-space: 8px;
 }
 
+/* ================================
+   BASE
+   ================================ */
+
 body {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f6f7fb;
-  color: #1e1f2b;
+  font-family: var(--cf-font-body);
+  background-color: #ffffff;
+  color: #000000;
   scroll-behavior: smooth;
 }
 
-/* Skip link for keyboard accessibility */
+/* Skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--cf-blue);
+  background: var(--cf-azul-institucional);
   color: #fff;
   padding: 0.5rem 1rem;
   z-index: 2000;
@@ -32,84 +51,89 @@ body {
   top: 0.5rem;
 }
 
+/* Focus visible */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible,
-.card:focus-visible {
-  outline: 3px solid var(--cf-orange);
+select:focus-visible {
+  outline: 3px solid var(--cf-amarillo-oscuro);
   outline-offset: 2px;
 }
 
-/* Navbar */
+/* ================================
+   NAVBAR
+   ================================ */
+
 .cf-navbar {
-  background: var(--cf-gradient);
-  box-shadow: var(--cf-shadow);
+  background: var(--cf-azul-institucional);
 }
 .cf-navbar .navbar-brand {
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-family: var(--cf-font-title);
 }
 .cf-navbar .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-weight: 500;
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: #ffffff !important;
+  font-family: var(--cf-font-body);
+  transition: opacity 0.2s ease;
 }
 .cf-navbar .nav-link:hover,
 .cf-navbar .nav-link.active {
-  color: #fff !important;
-  transform: translateY(-1px);
+  opacity: 0.8;
 }
 
-/* Hero */
+/* ================================
+   HERO
+   ================================ */
+
 .cf-hero {
-  background: var(--cf-gradient);
+  background: var(--cf-azul-institucional);
   color: #fff;
-  border-radius: 0 0 2rem 2rem;
   padding: 4rem 1rem;
+  border-radius: 0 0 2rem 2rem;
 }
 .cf-hero h1 {
-  font-weight: 800;
-}
-.cf-hero .btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.cf-hero .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-family: var(--cf-font-title);
 }
 
-/* Cards */
+/* ================================
+   TARJETAS
+   ================================ */
+
 .cf-card {
+  background: #ffffff;
+  border-radius: var(--cf-radius-card);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   border: none;
-  border-radius: var(--cf-radius);
-  box-shadow: var(--cf-shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  height: 100%;
 }
-.cf-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(43, 92, 255, 0.2);
+.cf-card .card-title {
+  font-family: var(--cf-font-title);
 }
 .cf-card .card-body {
-  display: flex;
-  flex-direction: column;
+  font-family: var(--cf-font-body);
 }
-.cf-badge-cultural { background-color: var(--cf-purple); }
-.cf-badge-deportivo { background-color: #2ecc71; }
-.cf-badge-tecnologico { background-color: var(--cf-blue); }
-.cf-badge-artistico { background-color: #e84393; }
-.cf-badge-gastronomico { background-color: var(--cf-orange); }
-.cf-badge-recreativo { background-color: #00b894; }
 
-.cf-status-disponible { background-color: #2ecc71; }
-.cf-status-lleno { background-color: #e74c3c; }
-.cf-status-cancelado { background-color: #7f8c8d; }
+/* ================================
+   BADGES (colores por escuela)
+   ================================ */
 
-/* Section titles */
+.cf-badge-cultural { background-color: #712C86; }
+.cf-badge-deportivo { background-color: #4AA147; }
+.cf-badge-tecnologico { background-color: #2B93D1; }
+.cf-badge-artistico { background-color: #C81F66; }
+.cf-badge-gastronomico { background-color: #FFC63E; }
+.cf-badge-recreativo { background-color: #00928D; }
+
+/* Estados */
+.cf-status-disponible { background-color: #4AA147; }
+.cf-status-lleno { background-color: #D2232A; }
+.cf-status-cancelado { background-color: #7C7B75; }
+
+/* ================================
+   TÍTULOS DE SECCIÓN
+   ================================ */
+
 .cf-section-title {
-  font-weight: 800;
+  font-family: var(--cf-font-title);
   position: relative;
   display: inline-block;
   margin-bottom: 2rem;
@@ -119,119 +143,109 @@ select:focus-visible,
   display: block;
   width: 60px;
   height: 4px;
-  background: var(--cf-gradient);
+  background: var(--cf-azul-brillante);
   border-radius: 2px;
   margin-top: 0.5rem;
 }
 
-/* Footer */
+/* ================================
+   FOOTER
+   ================================ */
+
 .cf-footer {
-  background: #171826;
-  color: #d5d7e5;
+  background: var(--cf-gris-oscuro);
+  color: #ffffff;
   padding: 3rem 0 1.5rem;
 }
 .cf-footer a {
-  color: #d5d7e5;
+  color: #ffffff;
   text-decoration: none;
 }
 .cf-footer a:hover {
-  color: var(--cf-orange);
   text-decoration: underline;
 }
 
-/* Loading spinner */
-.cf-spinner-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 0;
-  gap: 1rem;
-}
+/* ================================
+   BOTONES
+   ================================ */
 
-/* Empty state */
-.cf-empty-state {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: #6c757d;
-}
-.cf-empty-state i {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--cf-purple);
-}
-
-/* Toast container */
-.cf-toast-container {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2000;
-}
-
-/* Buttons */
 .btn-cf-primary {
-  background: var(--cf-gradient);
+  background: var(--cf-azul-institucional);
   border: none;
   color: #fff;
-  font-weight: 600;
+  font-family: var(--cf-font-body);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--cf-radius-btn);
+  transition: background 0.2s ease;
 }
 .btn-cf-primary:hover {
-  color: #fff;
-  filter: brightness(1.08);
+  background: var(--cf-btn-hover);
 }
+
 .btn-cf-outline {
-  border: 2px solid var(--cf-blue);
-  color: var(--cf-blue);
-  font-weight: 600;
+  border: 2px solid var(--cf-azul-institucional);
+  color: var(--cf-azul-institucional);
   background: transparent;
+  padding: 0.6rem 1rem;
+  border-radius: var(--cf-radius-btn);
+  font-family: var(--cf-font-body);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .btn-cf-outline:hover {
-  background: var(--cf-blue);
+  background: var(--cf-azul-institucional);
   color: #fff;
 }
 
-/* Mobile tweaks */
-@media (max-width: 767.98px) {
-  .cf-hero {
-    padding: 2.5rem 1rem;
-    border-radius: 0 0 1.25rem 1.25rem;
-  }
+/* Small helper: large buttons should stack and be full-width on small screens */
+.btn-lg-mobile {
+  min-width: 200px;
+}
+@media (max-width: 576px) {
   .btn-lg-mobile {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: 1.05rem;
+    display: block !important;
+    width: 100% !important;
   }
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--cf-dark-bg);
-    color: #e7e8f0;
-  }
-  .cf-card {
-    background-color: var(--cf-dark-surface);
-    color: #e7e8f0;
-  }
-  .cf-footer {
-    background: #0c0d15;
-  }
-  .form-control,
-  .form-select {
-    background-color: var(--cf-dark-surface);
-    color: #e7e8f0;
-    border-color: #2c2e42;
-  }
-  .form-control:focus,
-  .form-select:focus {
-    background-color: var(--cf-dark-surface);
-    color: #e7e8f0;
-  }
-  .table {
-    color: #e7e8f0;
-  }
-  .modal-content {
-    background-color: var(--cf-dark-surface);
-    color: #e7e8f0;
-  }
+/* Waitlist button variant — styled according to the style guide */
+.btn-waitlist {
+  background: var(--cf-amarillo);
+  color: #1a1a1a;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: calc(var(--cf-radius-btn) - 2px);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.btn-waitlist:hover {
+  background: var(--cf-amarillo-oscuro);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.btn-waitlist:active {
+  transform: translateY(0);
+}
+.btn-waitlist:focus-visible {
+  outline: 3px solid rgba(255,198,62,0.35);
+  outline-offset: 2px;
+}
+.btn-waitlist.disabled,
+.btn-waitlist[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ================================
+   FORMULARIOS
+   ================================ */
+
+.form-control,
+.form-select {
+  border: 1px solid var(--cf-gris-claro);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cf-azul-brillante);
+  box-shadow: none;
 }

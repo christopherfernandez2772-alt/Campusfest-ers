@@ -161,22 +161,22 @@ const participants = [
   {
     fullName: 'María Fernanda Rojas',
     identification: '1001234567',
-    email: 'maria.rojas@universidad.edu.co',
-    phone: '3001234567',
+    email: 'maria.rojas@universidad.edu.cr',
+    phone: '8585464601',
     career: 'Ingeniería de Sistemas',
   },
   {
     fullName: 'Juan Esteban Gómez',
     identification: '1002345678',
-    email: 'juan.gomez@universidad.edu.co',
-    phone: '3012345678',
+    email: 'juan.gomez@universidad.edu.cr',
+    phone: '8585464602',
     career: 'Administración de Empresas',
   },
   {
     fullName: 'Laura Camila Torres',
     identification: '1003456789',
-    email: 'laura.torres@universidad.edu.co',
-    phone: '3023456789',
+    email: 'laura.torres@universidad.edu.cr',
+    phone: '8585464603',
     career: 'Diseño Gráfico',
   },
 ];
