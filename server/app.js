@@ -15,11 +15,15 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/activities', activityRoutes);
-app.use('/api/participants', participantRoutes);
-app.use('/api/registrations', registrationRoutes);
+// Input sanitization middleware (trims and escapes strings) — aligns with seguridad.md
+const sanitize = require('./middleware/sanitize');
+app.use(sanitize);
+
+app.use('/api/actividades', activityRoutes);
+app.use('/api/participantes', participantRoutes);
+app.use('/api/inscripciones', registrationRoutes);
 app.use('/api/stands', standRoutes);
-app.use('/api/admin', adminRoutes);
+app.use('/api/auth', adminRoutes);
 
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, message: 'CampusFest API está en línea' });

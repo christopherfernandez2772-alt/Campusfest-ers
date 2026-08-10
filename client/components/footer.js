@@ -26,9 +26,9 @@ function renderFooter() {
           <div class="col-md-4">
             <h2 class="h6 text-white">Contacto</h2>
             <ul class="list-unstyled">
-              <li><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:campusfest@universidad.edu.co">campusfest@universidad.edu.co</a></li>
-              <li><i class="bi bi-telephone me-2" aria-hidden="true"></i><a href="tel:+573001234567">+57 300 123 4567</a></li>
-              <li><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Bienestar Universitario, Campus Central</li>
+              <li><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:campusfest@universidad.edu.cr">campusfest@universidad.edu.cr</a></li>
+              <li><i class="bi bi-telephone me-2" aria-hidden="true"></i><a href="tel:+50685854646">+506 8585 4646 </a></li>
+              <li><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>San Jose, Costa Rica </li>
             </ul>
           </div>
         </div>

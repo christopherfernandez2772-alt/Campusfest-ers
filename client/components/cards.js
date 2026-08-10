@@ -45,9 +45,12 @@ function renderActivityCard(activity) {
             <li><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>${activity.location}</li>
             <li><i class="bi bi-people me-2" aria-hidden="true"></i>${activity.availableSpots} cupos disponibles</li>
           </ul>
-          <a href="/pages/activity-detail.html?id=${activity._id}" class="btn btn-cf-primary mt-auto">
-            Ver detalle
-          </a>
+          <div class="d-flex gap-2 mt-3">
+            <a href="/pages/activity-detail.html?id=${activity._id}" class="btn btn-cf-primary">
+              Ver detalle
+            </a>
+            ${activity.status === 'Lleno' ? `<a href="/pages/registration.html?activity=${activity._id}" class="btn btn-waitlist">Unirse a lista de espera</a>` : ''}
+          </div>
         </div>
       </div>
     </div>

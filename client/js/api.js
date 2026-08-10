@@ -30,27 +30,29 @@ async function apiRequest(path, options = {}) {
 
 const api = {
   admin: {
-    login: (password) => apiRequest('/admin/login', { method: 'POST', body: JSON.stringify({ password }) }),
+    login: (password) => apiRequest('/auth/login', { method: 'POST', body: JSON.stringify({ password }) }),
     saveKey: (password) => localStorage.setItem(ADMIN_KEY_STORAGE, password),
     clearKey: () => localStorage.removeItem(ADMIN_KEY_STORAGE),
     isLoggedIn: () => Boolean(localStorage.getItem(ADMIN_KEY_STORAGE)),
   },
   activities: {
-    list: (query = '') => apiRequest(`/activities${query}`),
-    get: (id) => apiRequest(`/activities/${id}`),
-    create: (data) => apiRequest('/activities', { method: 'POST', body: JSON.stringify(data) }),
-    update: (id, data) => apiRequest(`/activities/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
-    remove: (id) => apiRequest(`/activities/${id}`, { method: 'DELETE' }),
+    list: (query = '') => apiRequest(`/actividades${query}`),
+    get: (id) => apiRequest(`/actividades/${id}`),
+    create: (data) => apiRequest('/actividades', { method: 'POST', body: JSON.stringify(data) }),
+    update: (id, data) => apiRequest(`/actividades/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    remove: (id) => apiRequest(`/actividades/${id}`, { method: 'DELETE' }),
   },
   participants: {
-    list: () => apiRequest('/participants'),
-    create: (data) => apiRequest('/participants', { method: 'POST', body: JSON.stringify(data) }),
+    list: () => apiRequest('/participantes'),
+    create: (data) => apiRequest('/participantes', { method: 'POST', body: JSON.stringify(data) }),
   },
   registrations: {
-    list: () => apiRequest('/registrations'),
-    create: (data) => apiRequest('/registrations', { method: 'POST', body: JSON.stringify(data) }),
-    remove: (id) => apiRequest(`/registrations/${id}`, { method: 'DELETE' }),
+    list: () => apiRequest('/inscripciones'),
+    create: (data) => apiRequest('/inscripciones', { method: 'POST', body: JSON.stringify(data) }),
+    waitlist: (data) => apiRequest('/inscripciones/lista-espera', { method: 'POST', body: JSON.stringify(data) }),
+    remove: (id) => apiRequest(`/inscripciones/${id}`, { method: 'DELETE' }),
   },
+
   stands: {
     list: (query = '') => apiRequest(`/stands${query}`),
     get: (id) => apiRequest(`/stands/${id}`),
