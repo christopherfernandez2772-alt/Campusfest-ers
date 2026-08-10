@@ -11,10 +11,11 @@ async function populateActivitySelect() {
     available.forEach((activity) => {
       const option = document.createElement('option');
       option.value = activity._id;
+      // If activity is full, still allow selection so user can join waitlist from registration page
       option.textContent = `${activity.name} (${activity.availableSpots} cupos disponibles)`;
       if (activity.availableSpots <= 0) {
-        option.disabled = true;
-        option.textContent += ' - Sin cupo';
+        option.textContent += ' - Sin cupo (puedes unirte a la lista de espera)';
+        option.dataset.full = 'true';
       }
       if (activity._id === preselectedId) {
         option.selected = true;
@@ -94,7 +95,21 @@ async function handleSubmit(event) {
     form.reset();
     form.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
   } catch (error) {
-    window.showToast(error.message, 'error');
+    // If no spots are available, offer to join the waitlist
+    if (error.message && error.message.includes('No hay cupos')) {
+      const join = await window.confirmDialog('No hay cupos disponibles para la actividad seleccionada. ¿Deseas unirte a la lista de espera?', 'Unirse a lista de espera');
+      if (join) {
+        try {
+          await window.CampusFestAPI.registrations.waitlist(payload);
+          window.showToast('Te hemos añadido a la lista de espera. Te notificaremos si hay cupos disponibles.', 'success');
+          form.reset();
+        } catch (wlError) {
+          window.showToast(wlError.message || 'No se pudo añadir a la lista de espera.', 'error');
+        }
+      }
+    } else {
+      window.showToast(error.message, 'error');
+    }
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Enviar inscripción';

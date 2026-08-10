@@ -17,6 +17,15 @@ const registrationSchema = new Schema(
       trim: true,
       default: '',
     },
+    status: {
+      type: String,
+      enum: ['confirmed', 'waiting', 'cancelled'],
+      default: 'confirmed',
+    },
+    notified: {
+      type: Boolean,
+      default: false,
+    },
     registrationDate: {
       type: Date,
       default: Date.now,

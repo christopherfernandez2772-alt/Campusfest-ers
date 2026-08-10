@@ -40,7 +40,9 @@ async function loadActivityDetail() {
           ${
             canRegister
               ? `<a href="/pages/registration.html?activity=${activity._id}" class="btn btn-cf-primary btn-lg btn-lg-mobile">Inscribirse</a>`
-              : `<button class="btn btn-secondary btn-lg btn-lg-mobile" disabled>Inscripciones cerradas</button>`
+              : activity.status === 'Lleno'
+                ? `<a href="/pages/registration.html?activity=${activity._id}" class="btn btn-waitlist btn-lg btn-lg-mobile">Unirse a lista de espera</a>`
+                : `<button class="btn btn-secondary btn-lg btn-lg-mobile" disabled>Inscripciones cerradas</button>`
           }
         </div>
       </div>
