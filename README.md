@@ -1,94 +1,95 @@
-# CampusFest – Documentación del Proyecto
+# CampusFest 
 
-Este repositorio contiene la documentación oficial del proyecto **CampusFest**, desarrollado para el curso **Proyecto Integrador 1**.
+## Sistema Web para Gestión del Festival Estudiantil
 
-##  Integrante:
+CampusFest es una aplicación web desarrollada para centralizar la información y gestión de un festival estudiantil.
 
-- **Christopher Fernandez Matarrita**
+El sistema permite a los visitantes consultar actividades, revisar sus detalles, consultar el horario, visualizar stands, realizar inscripciones y acceder a la lista de espera cuando una actividad no dispone de cupos.
 
----
-
-Todos los artefactos se encuentran en la carpeta `design/`:
-
-- Guía de estilos  
-- Wireframes  
-- Mapa de navegación  
-- Diseño de la base de datos  
-- Estructura del sistema  
-- API REST  
-- Seguridad y manejo de errores  
-- Matriz de trazabilidad actualizada  
-
-
-Todos los artefactos se encuentran en la carpeta `design/Arquitectura`:
-
-- Diagrama casos de uso
-- Diagrama de arquitectura de Campus Fest (En capas)
-- Patrones arquitectónicos empleados – CampusFest
-
-Todos los artefactos se encuentran en la carpeta `design/base de datos`:
-- Diseño de base de datos con colecciones 
-
+Además, proporciona un área administrativa para gestionar actividades, stands e inscripciones.
 
 ---
 
-##  Otras evidencias del Proyecto
+# Características principales
 
-### Jira
-Actualización de historias de usuario y épicas:  
-https://ucenfotec-team-pts26eyo.atlassian.net/jira/software/projects/CGDFE/list?jql=project%20%3D%20CGDFE%20ORDER%20BY%20created%20DESC%2C%20cf%5B10019%5D%20DESC
+## Visitantes
+
+El sistema permite a los visitantes:
+
+- Consultar las actividades disponibles.
+- Filtrar actividades.
+- Consultar el detalle de una actividad.
+- Realizar inscripciones.
+- Acceder a la lista de espera.
+- Consultar el horario del festival.
+- Consultar los stands.
+- Consultar preguntas frecuentes.
+- Utilizar el formulario de contacto.
+- Navegar mediante una interfaz responsive y menú móvil.
+
+## Administradores
+
+Los administradores pueden:
+
+- Iniciar sesión.
+- Crear actividades.
+- Editar actividades.
+- Cancelar actividades.
+- Consultar inscripciones.
+- Gestionar inscripciones.
+- Registrar y gestionar stands.
 
 ---
 
-## Estado de las entregas
+# Tecnologías utilizadas
 
-Todos los elementos solicitados en la Bitácora 3 están incluidos:
+## Frontend
 
-- Diagrama de arquitectura 
-- Patrones arquitectónicos  
-- Diseño de la base de datos  
-- Estructura del sistema  
-- API REST  
-- Seguridad y manejo de errores  
-- Tecnologías utilizadas  
-- Matriz de trazabilidad actualizada  
-- Historias nuevas en Jira  
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+- Diseño responsive
+
+## Backend
+
+- Node.js
+- Express.js
+- JavaScript
+
+## Base de datos
+
+- MongoDB
+
+## Herramientas de desarrollo y gestión
+
+- Visual Studio Code
+- Git
+- GitHub
+- Jira
+- Figma
+- Draw.io
+
 ---
 
-## Toda la documentación está basada exclusivamente en los artefactos oficiales del proyecto CampusFest.
+# Requisitos previos
+
+Antes de instalar CampusFest se recomienda contar con:
+
+- Node.js instalado.
+- npm instalado.
+- MongoDB configurado.
+- Git instalado.
+- Un navegador web moderno como Google Chrome, Mozilla Firefox o Microsoft Edge.
 
 ---
 
-# API (resumen de endpoints)
+# 📥 Instalación
 
-Actividades
-GET  /api/actividades
-GET  /api/actividades/:id
-POST /api/actividades
-PUT  /api/actividades/:id
-DELETE /api/actividades/:id
+## 1. Clonar el repositorio
 
-Inscripciones
-POST /api/inscripciones            # Crear inscripción (público)
-POST /api/inscripciones/lista-espera  # Añadir a lista de espera
-GET  /api/inscripciones/actividad/:idActividad  # Obtener inscripciones por actividad (público)
-DELETE /api/inscripciones/:id     # (admin)
+Clonar el repositorio desde GitHub:
 
-Stands
-GET  /api/stands
-POST /api/stands
-
-FAQ
-GET  /api/faq
-POST /api/faq
-PUT  /api/faq/:id
-
-Autenticación
-POST /api/auth/login
-
-
-> Responses estándar:
-> - Éxito: { "success": true, "data": ... }
-> - Error:  { "success": false, "message": "..." }
-
+```bash
+git https://github.com/christopherfernandez2772-alt/Campusfest-ers
 
